@@ -6,14 +6,14 @@
 - Run `make up` in the root folder of the project to build and start the container
 - Run `make down` in the root folder of the project to stop the container
 - Run `make rm` in the root folder of the project to remove the container
-- Run `make test` in the root folder of the project to run the tests
+- Run `make test` in the root folder of the project to run the tests, you  need to have pytest installed
 
 ## Urls and User:
 - Django will be available on `localhost:8000`
 - Django admin user and password are "admin"
 
 ## Calculating an angle:
-To calculate an angle make a get request to `localhost:8000/clock-angle/<hours>/<minutes>`, you can use Postman to make the requests
+To calculate an angle make a get request to `localhost:8000/clock-angle/<hours>/<minutes>/`, you can use psotman or curl to make the requests.
 - Always returns the rounded down smaller angle between the clock hands
 - Requests with the same parameters are retrieved from the database instead of calculated
 - Hours are ints between 0 and 24
