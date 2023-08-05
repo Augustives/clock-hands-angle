@@ -9,9 +9,20 @@ from apps.clock_angle.serializers import ClockAngleSerializer
 
 
 class ClockAngleView(APIView):
-    def _calculate_angle_between_hour_and_minute_hands(
+    def _get_angle_between_hour_and_minute_hands(
         self, hours: int, minutes: int
     ) -> float:
+        """
+        Takes in the value of hours and minutes and returns
+        the the rounded down smaller angle between the clock hands.
+
+        Args:
+            hours (int): int value between 0 and 24
+            minutes (int): int value between 0 and 59
+
+        Returns:
+            float: angle
+        """
         hour_angle = (hours % 12) * 30 + minutes * 0.5
         minute_angle = 6 * minutes
 
@@ -35,7 +46,7 @@ class ClockAngleView(APIView):
                 angle = clock_angle.angle
 
             except ClockAngle.DoesNotExist:
-                angle = self._calculate_angle_between_hour_and_minute_hands(
+                angle = self._get_angle_between_hour_and_minute_hands(
                     int(hours), int(minutes)
                 )
                 serializer.validated_data["angle"] = angle

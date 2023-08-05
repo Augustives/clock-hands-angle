@@ -23,9 +23,7 @@ class TestClockAngleView:
         self, hours: int, minutes: int, angle: float
     ):
         assert (
-            ClockAngleView()._calculate_angle_between_hour_and_minute_hands(
-                hours, minutes
-            )
+            ClockAngleView()._get_angle_between_hour_and_minute_hands(hours, minutes)
             == angle
         )
 
@@ -41,9 +39,7 @@ class TestClockAngleView:
         self, hours: int, minutes: int, angle: float
     ):
         assert (
-            ClockAngleView()._calculate_angle_between_hour_and_minute_hands(
-                hours, minutes
-            )
+            ClockAngleView()._get_angle_between_hour_and_minute_hands(hours, minutes)
             == angle
         )
 
