@@ -3,6 +3,10 @@ version: '3'
 services:
   django:
     build: .
-    entrypoint: ./entrypoint.sh
+    command:
+      sh -c "python3 ./src/manage.py migrate --noinput &&
+      python3 ./src/manage.py loaddata clock_angles.json &&
+      python3 ./src/manage.py shell < ./src/utils/create_superuser.py &&
+      python3 ./src/manage.py runserver 0.0.0.0:8000"
     ports:
       - "8000:8000"

@@ -9,10 +9,8 @@
 *Make sure you have docker installed and running*
 - Run `make up` in the root folder of the project to build and start the container
 - Run `make down` in the root folder of the project to stop the container
-- Run `make rm` in the root folder of the project to remove the container and related images and volumes
+- Run `make rm` in the root folder of the project to remove the container
 - Run `make test` in the root folder of the project to run the tests
-
-If you get issues with the `entrypoint.sh`, it might be because it needs permissions, fix this by running: `chmod +x ./entrypoint.sh`
 
 ## Urls and User:
 - Django will be available on `localhost:8000`
