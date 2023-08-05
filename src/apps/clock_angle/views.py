@@ -13,15 +13,14 @@ class ClockAngleView(APIView):
         self, hours: int, minutes: int
     ) -> float:
         """
-        Takes in the value of hours and minutes and returns
-        the the rounded down smaller angle between the clock hands.
+        Calculate the smaller angle between the hour and minute hands of a clock.
 
         Args:
-            hours (int): int value between 0 and 24
-            minutes (int): int value between 0 and 59
+            hours (int): An integer value between 0 and 23 (24-hour format).
+            minutes (int): An integer value between 0 and 59.
 
         Returns:
-            float: angle
+            float: The smaller angle in degrees.
         """
         hour_angle = (hours % 12) * 30 + minutes * 0.5
         minute_angle = 6 * minutes
