@@ -19,7 +19,6 @@ To calculate an angle make a get request to `localhost:8000/clock-angle/<hours>/
     - Minutes are ints between 0 and 59
     - There is no need to send minutes if you dont want to.
 
-<br>
 
 GET: `localhost:8000/clock-angle/6/`
 ```
