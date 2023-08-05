@@ -1,10 +1,6 @@
 # Django Clock Hands Angle API
 
-## Setup:
-- Create a virtual env with python, `python -m venv venv`
-- Activate the virtual env
-- Install the requirements, `pip install -r requirements.txt`
- 
+
 ## Commands:
 *Make sure you have docker installed and running*
 - Run `make up` in the root folder of the project to build and start the container
