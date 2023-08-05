@@ -1,11 +1,11 @@
 up:
-	docker-compose up -d --build django
+	docker-compose up -d --build
 
 down:
-	docker-compose -p clock-hands-angle stop django
+	docker-compose -p clock-hands-angle stop
 
 rm: down
-	docker-compose -p clock-hands-angle rm -f -v django
+	docker-compose -p clock-hands-angle rm -f -v
 
 test:
 	pytest ./src
