@@ -13,6 +13,7 @@
 
 ## Calculating an angle:
 To calculate an angle make a get request to `localhost:8000/clock-angle/<hours>/<minutes>`.
+
     - Always returns the rounded down smaller angle between the clock hands.
     - Requests with the same parameters are retrieved from the database instead of calculated.
     - Hours are ints between 0 and 24
