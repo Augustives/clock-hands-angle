@@ -2,7 +2,7 @@
 
 
 ## Commands:
-*Make sure you have docker installed and running*
+*Make sure you have docker and docker compose installed and running*
 - Run `make up` in the root folder of the project to build and start the container
 - Run `make down` in the root folder of the project to stop the container
 - Run `make rm` in the root folder of the project to remove the container
