@@ -25,6 +25,7 @@ To calculate an angle make a get request to `localhost:8000/clock-angle/<hours>/
 - Hours are ints between 0 and 24
 - Minutes are ints between 0 and 59
 - There is no need to send minutes if you dont want to
+- Database already has some angles calculated, they are inserted through fixtures when you build the project
 
 <br>
 
