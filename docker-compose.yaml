@@ -1,8 +1,21 @@
 version: '3'
 
 services:
+  db:
+    image: postgres
+    networks:
+      - clock_network
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
   django:
     build: .
+    networks:
+      - clock_network
     command:
       sh -c "python3 ./src/manage.py migrate --noinput &&
       python3 ./src/manage.py loaddata clock_angles.json &&
@@ -10,3 +23,13 @@ services:
       python3 ./src/manage.py runserver 0.0.0.0:8000"
     ports:
       - "8000:8000"
+    environment:
+      - DATABASE_NAME=postgres
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_HOST=db
+    depends_on:
+      - db
+
+networks:
+  clock_network:
